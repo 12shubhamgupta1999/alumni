@@ -1,0 +1,200 @@
+<html>
+<head>
+<title>GALLERY</title>
+<link rel="stylesheet" type="text/css" href="stylesheet-gallery.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+
+<section id="gallery">
+<h1>OUR GALLERY</h1>
+<p>Fusce euismod libero at blandit dapibus.<br>
+ Etiam in erat vel turpis pharetra semper. Aenean a dignissim libero, et posuere est.</p>
+</section>
+ 
+<section id="gallery">
+<div class="container">
+<div class="row">
+  
+   
+<!---------Filterable Gallery-------------->
+   
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')">All</button>/
+  <button class="btn" onclick="filterSelection('housing')"> Housing</button>/
+  <button class="btn" onclick="filterSelection('campus')"> Campus</button>/
+  <button class="btn" onclick="filterSelection('studying')">Studying</button>/
+  <button class="btn" onclick="filterSelection('sports)">Sports</button>
+</div>
+   
+<div class="row">
+  <div class="column housing">
+    <div class="content">
+      <img src="p1.jpg" style="width:100%"id="image0" title="Accomodation">
+     </div>
+  </div>
+   
+<div class="column housing">
+    <div class="content">
+      <img src="p2.jpg" style="width:100%" id="image1" title="Accomodation">
+     </div>
+  </div>
+   
+<div class="column campus">
+    <div class="content">
+      <img src="p3.jpg"  style="width:100%" id="image2" title="Accomodation">
+     </div>
+  </div>
+   
+<div class="column campus">
+    <div class="content">
+      <img src="p4.jpg" style="width:100%" id="image3" title="Accomodation">
+     </div>
+  </div>
+   
+<div class="column campus">
+    <div class="content">
+      <img src="p6.jpg" id="image4" title="Campus">
+     </div>
+  </div>
+   
+<div class="column studying">
+    <div class="content">
+      <img src="p6.jpg" id="image5" title="Campus">
+     </div>
+  </div>
+   
+<div class="column sports">
+    <div class="content">
+      <img src="p7.jpg" id="imag6" title="Campus">
+     </div>
+  </div>
+  
+  <div class="column sports">
+    <div class="content">
+      <img src="p8.jpg" id="imag7" title="Campus">
+     </div>
+  </div>
+  
+<div class="column sports">
+    <div class="content">
+      <img src="p9.jpg" id="imag8" title="Reading Area">
+     </div>
+  </div>
+
+<div class="column sports">
+    <div class="content">
+      <img src="p9.jpg" id="imag9" title="Reading Area">
+     </div>
+  </div>
+  
+<div class="column sports">
+    <div class="content">
+      <img src="p11.jpg" id="imag10" title="Sports and Games">
+     </div>
+  </div>
+  
+<div class="column sports">
+    <div class="content">
+      <img src="p12.jpg" id="imag11" title="Sports and Games">
+     </div>
+  </div>
+</div>
+    </div>
+    </div>
+    </section>
+
+
+
+
+ 
+
+<script>
+    
+    filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+    
+document.getElementById("image1").tooltip({show:{effect:"bounce",duration:800}},{content:"a"});
+document.getElementById("image2").tooltip({show:{effect:"bounce",duration:800}},{content:"b"});
+document.getElementById("image3").tooltip({show:{effect:"bounce",duration:800}},{content:"c"});
+document.getElementById("image4").tooltip({show:{effect:"bounce",duration:800}},{content:"d"});
+document.getElementById("image5").tooltip({show:{effect:"bounce",duration:800}},{content:"e"});
+document.getElementById("image6").tooltip({show:{effect:"bounce",duration:800}},{content:"f"});
+document.getElementById("image7").tooltip({show:{effect:"bounce",duration:800}},{content:"g"});
+document.getElementById("image8").tooltip({show:{effect:"bounce",duration:800}},{content:"h"});
+document.getElementById("image9").tooltip({show:{effect:"bounce",duration:800}},{content:"i"});
+document.getElementById("image10").tooltip({show:{effect:"bounce",duration:800}},{content:"j"});
+document.getElementById("image0").tooltip({show:{effect:"bounce",duration:800}},{content:"k"});
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </body>
+</html>
