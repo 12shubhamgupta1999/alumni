@@ -1,0 +1,92 @@
+@media screen and(max-width:1060px) {
+    #primary{width: 67%;}
+    #secondary{width:30%;margin-left: 3%;}
+}
+@media screen and(max-width:768px) {
+    #primary{width: 100%;}
+    #secondary{width:100%;margin:0;border: none;}
+}
+body
+{
+    font-family:Tahoma,Geneva,sans-serif;
+    color: #fff;
+    background: url(back.jpg);
+    background-size:cover;
+}
+.alumni
+{
+    background: rgba(44,62,80,0.7);
+    padding: 40px;
+    width: 350px;
+    height: 530px;
+    margin-left: 100px;
+    margin-right: auto;
+    margin: 0 auto;
+    margin-top: 90px;
+	margin-left: 400px;
+
+}
+.editt{
+	width:250px;
+	background-color: transparent;
+}
+form
+{
+    width: 340px;
+    text-align: center;
+
+}
+
+input
+{
+    width: 240px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-family: 'Play',sans-serif;
+    font-size: 16px;
+    font-weight: 200px;
+    padding: 10px 0;
+    transition: border 0.5s;
+    outline: none;
+    color: #fff;
+}
+.dropdown select{
+    border:0;
+
+    -moz-appearance: none;
+    width: 100px;
+    text-indent: 0.01px;
+    text-overflow: "";
+    color: white;
+    background-color: rgba(44,62,80,0.7)
+    
+
+}
+input[type=button]
+{
+    width: 190px;
+    background: white;
+    border: none;
+    font-size: 16px;
+    padding: 10px 0;
+    line-height: 25px;
+    color: #000;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+input[type=button]:hover
+{
+    color: #fff;
+    background-color: black;
+}
+h2 
+{
+    color: white;
+}
+::placeholder {
+    color: aliceblue;
+    opacity: 0.8;
+}
