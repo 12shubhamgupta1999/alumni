@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"/>
+        <meta name="HandheldFriendly" content="true">
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="contactus.css" type="text/css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play">
+		<link href="https://use.fontawesome.com/releases/v5.0.0/css/all.css" rel="stylesheet">
+        <style>
+        #msg{
+            visibility: hidden;
+            min-width: 250px;
+            background-color:#722f37;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            right: 30%;
+            top: 30px;
+            font-size: 17px;
+            margin-right: 120px;
+            margin-left: 100px;
+        }
+        #msg.show
+        {
+            visibility: visible;
+            -webkit-animation:fadein 0.5s,fadeout 0.5s 2.5s;
+            animation: fadein 0.5s,fadeout 0.5s 2.5s;
+        }
+        @keyframes fadein {
+            from{top: 0;opacity: 0;}
+            to{top: 30px;opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from{top: 30;opacity: 1;}
+            to{top: 0px;opacity: 0;}
+        }
+			.bottom{
+				font-size: 15px;
+				padding-left:20px;
+				margin-left:0px;
+				width: cover;
+				float:left;
+			}
+			.bottomclass{
+				color:white;
+				font-size: 13px;
+				font-weight: 400;
+				padding-left: 10px;
+				
+			}
+        </style>
+    </head>
+    <body>
+
+        <div class="alumni">
+            <form action="controller\addcollegecontroller.php" method="post">
+                <h2 style="color: white">Conatct Us</h2>
+                <input type="text" name="#" placeholder="Username" required>
+                <br><br>
+                <input type="email" name="#" placeholder="Email id" required>
+                <br><br>
+				<p>Message</p>
+				<textarea class="editt form-control" rows='4' name="cllgaddress">
+				</textarea>
+                <br><br>
+                
+                <input type="button" value="Send Message" onclick="myfunction()"><br><br>
+                <div id="msg">Your Message has been sent!!!</div>
+
+                <script>
+                function myfunction()
+                {
+                    var x=document.getElementById("msg");
+                    x.className="show";
+                    setTimeout(function(){x.className=
+                    x.className.replace("show","");},3000);
+                }
+                </script>
+            </form>
+        </div>
+    </body>
+</html>
